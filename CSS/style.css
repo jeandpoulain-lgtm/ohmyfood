@@ -1,4 +1,28 @@
 /*titre H1*/
 h1 {
   color: #9356DC;
+}
+
+/*body*/
+body {
+  max-width: 375px;
+  margin: auto;
+}
+
+/*logo*/
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 63px;
+}
+.header__logo {
+  width: 197px;
+  height: 36px;
+}
+
+/*location*/
+.location {
+  height: 50px;
+  background-color: #eaeaea;
 }/*# sourceMappingURL=style.css.map */

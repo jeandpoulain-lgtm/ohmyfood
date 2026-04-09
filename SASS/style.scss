@@ -4,3 +4,29 @@
 h1 {
     color: variables.$couleur-primaire; //test couleur primaire 
 }
+
+/*body*/
+body{
+    max-width: variables.$mobile-width;
+    margin: auto;
+}
+
+/*logo*/
+.header { // Le parent de votre logo
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 63px;           
+
+    &__logo {
+        width: 197px;
+        height: 36px;
+    }
+}
+
+/*location*/
+.location{
+    height: 50px;
+    background-color: variables.$couleur-background;
+
+}
