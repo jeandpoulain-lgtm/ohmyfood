@@ -1,14 +1,10 @@
 @use 'base/variables'; //on charge le fichier
 
-/*titre H1*/
-h1 {
-    color: variables.$couleur-primaire; //test couleur primaire 
-}
-
 /*body*/
 body{
     max-width: variables.$mobile-width;
-    margin: auto;
+    margin: 0;
+    padding: 0;
 }
 
 /*logo*/
@@ -16,7 +12,10 @@ body{
     display: flex;
     justify-content: center; 
     align-items: center;     
-    height: 63px;           
+    height: 63px; 
+    box-shadow: 0px 2px 4px 0px #00000026;
+    position: relative;
+    z-index: 10;
 
     &__logo {
         width: 197px;
@@ -25,8 +24,60 @@ body{
 }
 
 /*location*/
-.location{
+.location {
     height: 50px;
-    background-color: variables.$couleur-background;
-
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    position: relative;
+    z-index: 5;
+    span {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    }
 }
+
+.hero {
+    background-color:  #F6F6F6;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    h1 {
+        text-align: center;
+        font-family: Roboto;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 100%;
+    }
+
+    p{
+        color: #353535;
+        text-align: center;
+        font-family: Roboto;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+    button {
+        color: white;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 16px;
+        padding: 13px 18.75px;
+        border: none;
+        background-image: linear-gradient(193deg, variables.$couleur-secondaire 0%, variables.$couleur-primaire 100%);
+        border-radius: 25px;
+        box-shadow:0px 4px 4px 0px #00000026;
+    }
+}
+
+
