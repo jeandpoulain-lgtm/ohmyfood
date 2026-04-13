@@ -1,4 +1,5 @@
-@use 'base/variables'; //on charge le fichier
+@use 'base/variables'; //on donne emplacement du fichier
+@use 'base/mixin';
 
 /*body*/
 body{
@@ -36,10 +37,7 @@ body{
     z-index: 5;
 
     &__text {
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 100%;
+    @include mixin.font-roboto(16px, 500);
     }
 }
 /*hero*/ 
@@ -53,26 +51,20 @@ body{
 
     &__title {
         text-align: center;
-        font-family: Roboto;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 100%;
+        @include mixin.font-roboto(24px, 700);
+        
     }
 
     &__text {
         color: #353535;
         text-align: center;
-        font-family: Roboto;
-        font-weight: 300;
-        font-size: 18px;
-        line-height: 100%;
+        @include mixin.font-roboto(18px, 300);
+        
     }
 
     &__btn {
         color: white;
-        font-family: 'Roboto';
-        font-weight: 500;
-        font-size: 16px;
+        @include mixin.font-roboto(16px, 500);
         padding: 13px 18.75px;
         border: none;
         background-image: linear-gradient(193deg, variables.$couleur-secondaire 0%, variables.$couleur-primaire 100%);
@@ -85,10 +77,8 @@ body{
     &__title {
         margin-top: 50px;
         margin-bottom: 25px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        font-size: 24px;
         padding-left: 20px;
+        @include mixin.font-roboto(24px, 700);
     }
 
     &__list {
@@ -101,9 +91,7 @@ body{
     }
 
     &__text { 
-        font-family: Roboto, sans-serif;
-        font-weight: 500;
-        font-size: 16px;
+        @include mixin.font-roboto(16px, 500);
     }
 
     &__item {
@@ -146,30 +134,31 @@ body{
 /*restaurant*/
 
 .restaurants {
-    padding: 40px 20px;
     background-color: #f6f6f6;
 
     &__title {
         margin-bottom: 20px;
+        padding-left: 15px;
     }
 
     &__grid {
         display: flex;
         flex-direction: column;
-        gap: 18px; 
+        gap: 50px;
+        padding: 0 10px;
     }
 }
 
 .card {
+    height: 250px;
     background-color: white;
     border-radius: 15px;
     position: relative;
     text-decoration: none; 
-    color: inherit;
     display: block;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden; 
-    margin-bottom: 15px;
+    overflow: hidden;
+    
 
     &__img {
         width: 100%;
@@ -188,26 +177,20 @@ body{
     }
 
     &__content {
-        padding: 15px;
+        padding: 3px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
     &__title {
-        font-family: Roboto;
-        font-weight: 700;
-        font-size: 18px;
+        @include mixin.font-roboto(18px, 700);
         margin: 0 0 5px 0;
-        font-size: 18px;
     }
 
     &__location {
-        font-family: Roboto;
-        font-weight: 300;
-        font-size: 17px;
+        @include mixin.font-roboto(17px, 300);
         margin: 0;
-        font-weight: 300;
     }
 }
 

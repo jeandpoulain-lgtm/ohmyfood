@@ -1,3 +1,4 @@
+
 /*body*/
 body {
   max-width: 375px;
@@ -33,9 +34,9 @@ body {
   z-index: 5;
 }
 .location__text {
-  font-family: Roboto;
-  font-weight: 500;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
+  font-weight: 500;
   line-height: 100%;
 }
 
@@ -50,7 +51,7 @@ body {
 }
 .hero__title {
   text-align: center;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 100%;
@@ -58,14 +59,14 @@ body {
 .hero__text {
   color: #353535;
   text-align: center;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 18px;
   line-height: 100%;
 }
 .hero__btn {
   color: white;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   padding: 13px 18.75px;
@@ -93,7 +94,7 @@ body {
   margin: 0;
 }
 .steps__text {
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
 }
@@ -133,28 +134,28 @@ body {
 
 /*restaurant*/
 .restaurants {
-  padding: 40px 20px;
   background-color: #f6f6f6;
 }
 .restaurants__title {
   margin-bottom: 20px;
+  padding-left: 15px;
 }
 .restaurants__grid {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 50px;
+  padding: 0 10px;
 }
 
 .card {
+  height: 250px;
   background-color: white;
   border-radius: 15px;
   position: relative;
   text-decoration: none;
-  color: inherit;
   display: block;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  margin-bottom: 15px;
 }
 .card__img {
   width: 100%;
@@ -172,20 +173,19 @@ body {
   right: 15px;
 }
 .card__content {
-  padding: 15px;
+  padding: 3px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .card__title {
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 18px;
   margin: 0 0 5px 0;
-  font-size: 18px;
 }
 .card__location {
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 17px;
   margin: 0;
