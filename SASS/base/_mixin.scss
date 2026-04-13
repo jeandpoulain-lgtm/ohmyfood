@@ -5,3 +5,10 @@
     font-size: $size;
     font-weight: $weight;
 }
+
+@mixin font-shrikhand($size, $weight: 400) {
+    font-family: 'Shrikhand', cursive;
+    font-size: $size;
+    font-weight: $weight;
+}
+
