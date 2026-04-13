@@ -22,11 +22,11 @@ body {
 
 /*location*/
 .location {
-  height: 50px;
-  background-color: #eaeaea;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 50px;
+  background-color: #eaeaea;
   gap: 17px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
   position: relative;
@@ -40,46 +40,46 @@ body {
 
 /*hero*/
 .hero {
-  background-color: #F6F6F6;
-  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #F6F6F6;
+  padding: 30px;
   gap: 15px;
 }
 .hero__title {
-  text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 24px;
   font-weight: 700;
+  text-align: center;
 }
 .hero__text {
-  color: #353535;
-  text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 300;
+  color: #353535;
+  text-align: center;
 }
 .hero__btn {
-  color: white;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 500;
+  color: white;
   padding: 13px 18.75px;
   border: none;
   background-image: linear-gradient(193deg, #FF79DA 0%, #9356DC 100%);
   border-radius: 25px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1490196078);
 }
 
 /*steps*/
 .steps__title {
-  margin-top: 50px;
-  margin-bottom: 25px;
-  padding-left: 20px;
   font-family: "Roboto", sans-serif;
   font-size: 24px;
   font-weight: 700;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  padding-left: 20px;
 }
 .steps__list {
   display: flex;
@@ -104,7 +104,7 @@ body {
   margin-bottom: 20px;
   margin-left: 12px;
   border-radius: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1019607843);
 }
 .steps__icon {
   margin-right: 20px;
@@ -115,6 +115,9 @@ body {
   color: #9356DC;
 }
 .steps__number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   left: -12px;
   background-color: #9356DC;
@@ -122,9 +125,6 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 14px;
 }
 
@@ -147,11 +147,11 @@ body {
 .card {
   min-height: 250px;
   background-color: white;
-  border-radius: 15px;
+  border-radius: 20px;
   position: relative;
   text-decoration: none;
   display: block;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1019607843);
   overflow: hidden;
 }
 .card__img {
@@ -164,7 +164,6 @@ body {
   background-color: #99E2D0;
   color: #008766;
   padding: 7px 12px;
-  border-radius: 2px;
   position: absolute;
   top: 15px;
   right: 15px;
@@ -202,19 +201,19 @@ body {
   margin-bottom: 20px;
 }
 .footer__list {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
   gap: 7px;
 }
 .footer__link {
-  color: white;
-  text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 500;
+  color: white;
+  text-decoration: none;
 }
 .footer__icon {
   width: 1.2rem; /*pour aligner */

@@ -3,16 +3,14 @@
 
 /*body*/
 body{
-    max-width: variables.$mobile-width;
+    max-width: variables.$largeur-mobile;
     padding: 0;
     margin: 0;
 }
 
 /*logo*/
 .header { // Le parent de votre logo
-    display: flex;
-    justify-content: center; 
-    align-items: center;     
+    @include mixin.flex-center;
     height: 63px; 
     box-shadow: 0px 2px 4px 0px #00000026;
     position: relative;
@@ -26,11 +24,9 @@ body{
 
 /*location*/
 .location {
+    @include mixin.flex-center;
     height: 50px;
     background-color: #eaeaea;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 17px;
     box-shadow: 0px 4px 4px 0px #00000040;
     position: relative;
@@ -42,48 +38,44 @@ body{
 }
 /*hero*/ 
 .hero {
+    @include mixin.flex-column;
+    align-items: center;
     background-color:  #F6F6F6;
     padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 15px;
 
     &__title {
-        text-align: center;
         @include mixin.font-roboto(24px, 700);
-        
+        text-align: center;
     }
 
     &__text {
+        @include mixin.font-roboto(18px, 300);
         color: #353535;
         text-align: center;
-        @include mixin.font-roboto(18px, 300);
-        
     }
 
     &__btn {
-        color: white;
         @include mixin.font-roboto(16px, 500);
+        color: white;
         padding: 13px 18.75px;
         border: none;
         background-image: linear-gradient(193deg, variables.$couleur-secondaire 0%, variables.$couleur-primaire 100%);
-        border-radius: 25px;
-        box-shadow:0px 4px 4px 0px #00000026;
+        border-radius: variables.$rayon-bordure-btn;
+        box-shadow: variables.$ombre-bordure-btn
     }
 }
 /*steps*/
 .steps {
     &__title {
+        @include mixin.font-roboto(24px, 700);
         margin-top: 50px;
         margin-bottom: 25px;
         padding-left: 20px;
-        @include mixin.font-roboto(24px, 700);
     }
 
     &__list {
-        display: flex;
-        flex-direction: column;
+        @include mixin.flex-column;
         align-items: center;
         list-style: none;
         padding: 0;
@@ -103,8 +95,8 @@ body{
         padding: 25px;
         margin-bottom: 20px;
         margin-left: 12px;
-        border-radius: 20px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: variables.$rayon-bordure-card;
+        box-shadow: variables.$ombre-bordure;
     }
 
     &__icon {
@@ -117,6 +109,7 @@ body{
     }
 
     &__number {
+        @include mixin.flex-center;
         position: absolute;
         left: -12px; 
         background-color: #9356DC;
@@ -124,9 +117,6 @@ body{
         width: 24px;
         height: 24px;
         border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-size: 14px;
     }
 }
@@ -143,8 +133,7 @@ body{
     }
 
     &__grid {
-        display: flex;
-        flex-direction: column;
+        @include mixin.flex-column;
         gap: 20px;
         padding: 0 10px;
     }
@@ -153,11 +142,11 @@ body{
 .card {
     min-height: 250px;
     background-color: white;
-    border-radius: 15px;
+    border-radius: variables.$rayon-bordure-card;
     position: relative;
     text-decoration: none; 
     display: block;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: variables.$ombre-bordure;
     overflow: hidden;
     
 
@@ -171,7 +160,6 @@ body{
         background-color: #99E2D0;
         color: #008766;
         padding: 7px 12px;
-        border-radius: 2px;
         position: absolute;
         top: 15px;
         right: 15px;
@@ -209,19 +197,17 @@ body{
     }
 
     &__list{
+        @include mixin.flex-column;
         list-style: none;
         padding: 0;
         margin: 0;
-        display: flex;
-        flex-direction: column;
         gap: 7px;
     }
 
     &__link{
+        @include mixin.font-roboto(16px, 500);
         color: white;
         text-decoration: none;
-        @include mixin.font-roboto(16px, 500)
-
     }
 
     &__icon {
