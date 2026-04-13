@@ -140,12 +140,12 @@ body {
 .restaurants__grid {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 20px;
   padding: 0 10px;
 }
 
 .card {
-  height: 250px;
+  min-height: 250px;
   background-color: white;
   border-radius: 15px;
   position: relative;
