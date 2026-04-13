@@ -1,14 +1,18 @@
-@use 'base/variables'; //on donne emplacement du fichier
+//on donne emplacement du fichier
+@use 'base/variables'; 
 @use 'base/mixin';
 
-/*body*/
+/*------*/
+/*-BODY-*/
+/*------*/
 body{
     max-width: variables.$largeur-mobile;
     padding: 0;
     margin: 0;
 }
-
-/*logo*/
+/*------*/
+/*-LOGO-*/
+/*------*/
 .header { // Le parent de votre logo
     @include mixin.flex-center;
     height: 63px; 
@@ -21,8 +25,9 @@ body{
         height: 36px;
     }
 }
-
-/*location*/
+/*----------*/
+/**LOCATION-*/
+/*----------*/
 .location {
     @include mixin.flex-center;
     height: 50px;
@@ -36,7 +41,9 @@ body{
     @include mixin.font-roboto(16px, 500);
     }
 }
-/*hero*/ 
+/*------*/
+/*-HERO-*/
+/*------*/ 
 .hero {
     @include mixin.flex-column;
     align-items: center;
@@ -65,7 +72,9 @@ body{
         box-shadow: variables.$ombre-bordure-btn
     }
 }
-/*steps*/
+/*-------*/
+/*-STEPS-*/
+/*-------*/
 .steps {
     &__title {
         @include mixin.font-roboto(24px, 700);
@@ -120,9 +129,9 @@ body{
         font-size: 14px;
     }
 }
-
-/*restaurant*/
-
+/*-------------*/
+/*-RESTAURANTS-*/
+/*-------------*/
 .restaurants {
     background-color: #f6f6f6;
 
@@ -182,9 +191,9 @@ body{
         margin: 0;
     }
 }
-
-/*FOOTER*/
-
+/*--------*/
+/*-FOOTER-*/
+/*--------*/
 .footer{
     background-color: #353535;
     color: white;
@@ -215,6 +224,5 @@ body{
         margin-right: 10px;
         font-size: 13px;
     }
-
 }
 

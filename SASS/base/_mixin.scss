@@ -1,5 +1,6 @@
-//mixin text (400 default)//
+//MIXIN
 
+//FONT TEXT (400 default)//
 @mixin font-roboto($size, $weight: 400) {
     font-family: 'Roboto', sans-serif;
     font-size: $size;
@@ -12,6 +13,7 @@
     font-weight: $weight;
 }
 
+//FLEX DIRECTION
 @mixin flex-center{
     display: flex;
     justify-content: center;
