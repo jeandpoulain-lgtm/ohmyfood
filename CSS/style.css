@@ -186,7 +186,7 @@ body {
   width: 100%;
   height: 175px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .card {
   /*badge nouveau*/
@@ -217,9 +217,9 @@ body {
   font-weight: 300;
   margin: 10px;
 }
-.card {
-  /*coeur*/
-}
+
+/*coeur*/
+
 .card__btn {
   position: absolute;
   right: 25px;
