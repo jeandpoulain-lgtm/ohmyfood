@@ -9,9 +9,9 @@
 @use 'components/button';
 @use 'pages/home';
 
-// Style global pour le body
+// Style global pour le body 
 body {
     max-width: variables.$largeur-mobile;
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
-}
+} 
