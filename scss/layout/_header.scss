@@ -1,0 +1,16 @@
+@use '../base/variables';
+@use '../base/mixin';
+
+
+.header {
+    @include mixin.flex-center;
+    height: 63px; 
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 10;
+
+    &__logo {
+        width: 197px;
+        height: 36px;
+    }
+}

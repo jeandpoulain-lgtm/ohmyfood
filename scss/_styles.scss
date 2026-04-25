@@ -1,0 +1,17 @@
+// Import des outils en premier (obligatoire pour que les autres fichiers fonctionnent)
+@use 'base/variables';
+@use 'base/mixin';
+
+// Import des styles par dossiers
+@use 'layout/header';
+@use 'layout/footer';
+@use 'components/card';
+@use 'components/button';
+@use 'pages/home';
+
+// Style global pour le body
+body {
+    max-width: variables.$largeur-mobile;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}

@@ -1,0 +1,91 @@
+@use '../base/variables';
+@use '../base/mixin';
+
+/*-----------------*/
+/*-CARD RESTAURANT-*/
+/*-----------------*/
+.card {
+    min-height: 250px;
+    background-color: white;
+    border-radius: variables.$rayon-bordure-card;
+    position: relative;
+    text-decoration: none; 
+    display: block;
+    box-shadow: variables.$ombre-bordure;
+    overflow: hidden;
+    
+    &__link{
+        text-decoration: none;
+        color:inherit;
+        display: block;
+    }
+    
+    &__img {
+        width: 100%;
+        height: 175px;
+        object-fit: cover;
+    }
+/*badge nouveau*/
+    &__badge {
+        background-color: #99E2D0;
+        color: #008766;
+        padding: 7px 12px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    &__content {
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        @include mixin.font-roboto(18px, 700);
+        margin: 0 0 5px 10px;
+    }
+
+    &__location {
+        @include mixin.font-roboto(17px, 300);
+        margin: 10px;
+    }
+
+    /*coeur*/
+
+    &__btn {
+        position: absolute;
+        right: 25px;
+        bottom: 25px; 
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 10; 
+
+        .card__icon {
+            font-size: 25px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: opacity 400ms ease-in-out;
+
+            &--full {
+                opacity: 0;
+                background: linear-gradient(193deg, variables.$couleur-secondaire, variables.$couleur-primaire);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+
+        &:hover {
+            .card__icon--full {
+                opacity: 1; 
+            }
+            .card__icon--empty {
+                opacity: 0; 
+            }
+        }
+    }
+}

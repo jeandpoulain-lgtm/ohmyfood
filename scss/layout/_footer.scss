@@ -1,0 +1,25 @@
+@use '../base/variables';
+@use '../base/mixin';
+
+.footer {
+    background-color: #353535;
+    color: white;
+    padding: 20px 15px;
+
+    &__title {
+        @include mixin.font-shrikhand(18px);
+        margin-bottom: 20px;
+    }
+
+    &__list {
+        @include mixin.flex-column;
+        list-style: none;
+        gap: 7px;
+    }
+
+    &__link {
+        @include mixin.font-roboto(16px, 500);
+        color: white;
+        text-decoration: none;
+    }
+}
