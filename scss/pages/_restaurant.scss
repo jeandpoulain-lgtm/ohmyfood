@@ -25,4 +25,64 @@
     &__title {
         @include mixin.font-shrikhand(28px);
     }
+
+    &__category {
+        margin-top: 40px;
+        
+        &-title {
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 5px;
+            font-weight: 300;
+
+            // La petite barre verte sous "ENTRÉES"
+            &::after {
+                content: "";
+                width: 40px;
+                height: 3px;
+                background-color: variables.$couleur-tertiaire; // Ton vert
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+.menu-item {
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    border-radius: 15px;
+    margin: 15px 0;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; // Important pour l'animation du check
+    cursor: pointer;
+
+    &__content {
+        height: 69px;
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        
+        h3{
+            font-size: 18px;
+        }
+
+        p{
+            font-size: 15px;
+        }
+
+        h3, p {
+            overflow: hidden;
+            text-overflow: ellipsis; // Pour les textes trop longs
+        }
+    }
+
+    &__price {
+        font-weight: bold;
+        display: flex;
+        align-items: flex-end;
+        padding-left: 10px;
+    }
 }

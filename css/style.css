@@ -334,4 +334,55 @@ hero__btn:hover {
   font-family: "Shrikhand", cursive;
   font-size: 28px;
   font-weight: 400;
+}
+.menu__category {
+  margin-top: 40px;
+}
+.menu__category-title {
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 5px;
+  font-weight: 300;
+}
+.menu__category-title::after {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background-color: #99E2D0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.menu-item {
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  border-radius: 15px;
+  margin: 15px 0;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+}
+.menu-item__content {
+  height: 69px;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.menu-item__content h3 {
+  font-size: 18px;
+}
+.menu-item__content p {
+  font-size: 15px;
+}
+.menu-item__content h3, .menu-item__content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-item__price {
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 10px;
 }/*# sourceMappingURL=style.css.map */
