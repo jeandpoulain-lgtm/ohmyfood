@@ -1,0 +1,8 @@
+@use '../base/variables';
+
+// Style global pour le body 
+body {
+    max-width: variables.$largeur-mobile;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+} 

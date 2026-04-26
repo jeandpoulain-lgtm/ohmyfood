@@ -21,7 +21,12 @@
             <!--SECTION LOCATION-->
             <section class="location">
                 <i class="location__icon fa-solid fa-location-dot"></i>
-                <span class="location__text">Paris, Belleville</span>
+                <form action="traitement.php" method="POST" class="search-form">
+                    <div class="location__form">
+                        <label for="city"></label>
+                        <input type="text" id="city" name="city" placeholder="Paris, Belleville" required>
+                    </div>
+                </form>
             </section>
             <!--SECTION HERO-->
             <section class="hero">

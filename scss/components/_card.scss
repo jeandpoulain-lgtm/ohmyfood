@@ -25,7 +25,7 @@
         height: 175px;
         object-fit: cover;
     }
-/*badge nouveau*/
+
     &__badge {
         background-color: #99E2D0;
         color: #008766;
@@ -51,8 +51,6 @@
         @include mixin.font-roboto(17px, 300);
         margin: 10px;
     }
-
-    /*coeur*/
 
     &__btn {
         position: absolute;

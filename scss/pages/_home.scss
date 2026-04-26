@@ -13,8 +13,26 @@
     position: relative;
     z-index: 5;
 
-    &__text {
-    @include mixin.font-roboto(16px, 500);
+    &__form {
+        border: none; 
+        display: flex;
+        align-items: center;
+
+        input {
+            border: none;       
+            background: none;
+            outline: none;       
+            
+            @include mixin.font-roboto(16px, 500);
+            color: #353535;
+            width: 150px;        
+            text-align: center;  
+            
+            &::placeholder {     
+                color: #353535;
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -100,7 +118,7 @@
         color: #7e7e7e;
         font-size: 18px;
         &--purple {
-            color: #9356DC; 
+        color: #9356DC; 
         }
     }
 
