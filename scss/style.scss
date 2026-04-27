@@ -1,7 +1,8 @@
 // Import des outils en premier 
 @use 'base/variables';
 @use 'base/mixin';
-@use 'base/base'; 
+@use 'base/animation'; 
+@use 'base/base';
 
 // Import des styles par dossiers
 @use 'layout/header';
