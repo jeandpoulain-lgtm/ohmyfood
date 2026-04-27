@@ -2,9 +2,63 @@
 @use '../base/mixin';
 @use '../base/animation'; 
 
+
+.resto-banner {
+    width: 100%;
+    height: 275px; // Ajuste la hauteur selon tes besoins
+    object-fit: cover; // Très important : évite de déformer l'image
+    object-position: center; // Centre l'image dans le cadre
+}
+
+.menu {
+    background-color: #F6F6F6;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    position: relative;
+    margin-top: -40px; // Fait remonter le menu sur l'image
+    padding: 30px 15px;
+}
+
+.menu__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .menu__title {
+        @include mixin.font-shrikhand(28px);
+    }
+
+    .menu__heart {
+        position: relative;
+        cursor: pointer;
+        font-size: 24px;
+        
+        .fa-solid {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            background: linear-gradient(193deg, variables.$couleur-secondaire, variables.$couleur-primaire);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: opacity 400ms;
+        }
+
+        &:hover {
+            .fa-solid {
+                opacity: 1;
+            }
+            .fa-regular {
+                opacity: 0; // Optionnel, pour un effet plus net
+            }
+        }
+    }
+}
+
+
 .menu-item {
     background-color: white;
-    padding: 15px;
+    padding: 0;
     display: flex;
     border-radius: 15px;
     margin: 15px 0;
@@ -26,6 +80,7 @@
         flex: 1;
         white-space: nowrap;
         overflow: hidden;
+        padding: 15px;
         
         h3 { font-size: 18px; margin: 0; }
         p { font-size: 15px; margin: 5px 0 0 0; }
@@ -41,27 +96,24 @@
         font-weight: bold;
         display: flex;
         align-items: flex-end;
-        padding-left: 10px;
-        padding-bottom: 5px; // Pour l'aligner un peu mieux
+        padding: 15px;
+        
     }
 
     // --- LE BLOC CHECK  ---
     &__check {
-        background-color: variables.$couleur-tertiaire; 
-        margin-right: -65px; // Légèrement plus grand pour bien le cacher
-        width: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: margin-right 0.5s ease-in-out;
-        
-        i {
-            color: white;
-            font-size: 20px;
-            transition: transform 0.5s ease-in-out;
-            transform: rotate(-360deg);
-        }
-    }
+    background-color: variables.$couleur-tertiaire; 
+    margin-right: -65px;
+    width: 60px;
+    
+    // AJOUTS ICI :
+    display: flex;
+    align-items: center;      // Centre l'icône verticalement
+    justify-content: center;   // Centre l'icône horizontalement
+    align-self: stretch;       // FORCE le bloc à s'étirer sur toute la hauteur
+    
+    transition: margin-right 0.5s ease-in-out;
+}
 
     // ---  L'EFFET AU SURVOL ---
     &:hover {
@@ -73,4 +125,12 @@
             transform: rotate(0);
         }
     }
+}
+//titre souligne en cert
+.menu__category-title {
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-bottom: 5px;
+    border-bottom: 3px solid variables.$couleur-tertiaire;
+    width: 40px; // Pour que la bordure soit courte
 }
