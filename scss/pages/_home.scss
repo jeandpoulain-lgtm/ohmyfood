@@ -154,3 +154,29 @@
         padding: 0 10px;
     }
 }
+
+/*--------------*/
+/*-MEDIA QUERIE-*/
+/*--------------*/
+
+@media (min-width: 768px) {
+
+    .steps {
+        padding: 0 30px;
+    }
+
+    .steps__list {
+        flex-direction: row; 
+        gap: 20px;
+    }
+    .steps__item {
+        flex: 1; 
+    }
+
+    .restaurants__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        column-gap: 50px;
+        row-gap: 20px;
+    }
+}

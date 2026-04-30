@@ -5,9 +5,9 @@
 
 .resto-banner {
     width: 100%;
-    height: 275px; // Ajuste la hauteur selon tes besoins
-    object-fit: cover; // Très important : évite de déformer l'image
-    object-position: center; // Centre l'image dans le cadre
+    height: 275px; 
+    object-fit: cover; 
+    object-position: center; 
 }
 
 .menu {
@@ -15,7 +15,7 @@
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     position: relative;
-    margin-top: -40px; // Fait remonter le menu sur l'image
+    margin-top: -40px; 
     padding: 30px 15px;
 }
 
@@ -41,7 +41,7 @@
             background: linear-gradient(193deg, variables.$couleur-secondaire, variables.$couleur-primaire);
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            transition: opacity 400ms;
+            transition: opacity 1s;
         }
 
         &:hover {
@@ -49,7 +49,7 @@
                 opacity: 1;
             }
             .fa-regular {
-                opacity: 0; // Optionnel, pour un effet plus net
+                opacity: 0; 
             }
         }
     }
@@ -105,14 +105,15 @@
     background-color: variables.$couleur-tertiaire; 
     margin-right: -65px;
     width: 60px;
-    
-    // AJOUTS ICI :
     display: flex;
-    align-items: center;      // Centre l'icône verticalement
-    justify-content: center;   // Centre l'icône horizontalement
-    align-self: stretch;       // FORCE le bloc à s'étirer sur toute la hauteur
-    
+    align-items: center;      
+    justify-content: center;   
+    align-self: stretch;       
     transition: margin-right 0.5s ease-in-out;
+
+    i{
+        color:white;
+    }
 }
 
     // ---  L'EFFET AU SURVOL ---
@@ -126,11 +127,11 @@
         }
     }
 }
-//titre souligne en cert
+//titre souligne en vert
 .menu__category-title {
     text-transform: uppercase;
     font-weight: 300;
     padding-bottom: 5px;
     border-bottom: 3px solid variables.$couleur-tertiaire;
-    width: 40px; // Pour que la bordure soit courte
+    width: 40px;
 }

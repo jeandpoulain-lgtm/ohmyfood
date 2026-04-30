@@ -2,7 +2,8 @@
 
 // Style global pour le body 
 body {
-    max-width: variables.$largeur-mobile;
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
 } 

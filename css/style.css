@@ -9,7 +9,8 @@
   }
 }
 body {
-  max-width: 375px;
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
 }
@@ -19,7 +20,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 63px;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 10;
 }
@@ -61,6 +62,17 @@ body {
   text-decoration: none;
 }
 
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 50px;
+  }
+  .footer__list {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+}
 /*-----------------*/
 /*-CARD RESTAURANT-*/
 /*-----------------*/
@@ -141,7 +153,7 @@ body {
   opacity: 0;
 }
 
-hero__btn {
+.btn {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -154,7 +166,7 @@ hero__btn {
   transition: transform 300ms, box-shadow 300ms, opacity 300ms;
   cursor: pointer;
 }
-hero__btn:hover {
+.btn:hover {
   opacity: 0.85;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
   transform: scale(1.02);
@@ -319,6 +331,28 @@ hero__btn:hover {
   padding: 0 10px;
 }
 
+/*--------------*/
+/*-MEDIA QUERIE-*/
+/*--------------*/
+@media (min-width: 768px) {
+  .steps {
+    padding: 0 30px;
+  }
+  .steps__list {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .steps__item {
+    flex: 1;
+  }
+  .restaurants__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 50px;
+         column-gap: 50px;
+    row-gap: 20px;
+  }
+}
 .resto-banner {
   width: 100%;
   height: 275px;
@@ -361,7 +395,7 @@ hero__btn:hover {
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: opacity 400ms;
+  transition: opacity 1s;
 }
 .menu__header .menu__heart:hover .fa-solid {
   opacity: 1;
@@ -444,6 +478,9 @@ hero__btn:hover {
   justify-content: center;
   align-self: stretch;
   transition: margin-right 0.5s ease-in-out;
+}
+.menu-item__check i {
+  color: white;
 }
 .menu-item:hover .menu-item__check {
   margin-right: 0;

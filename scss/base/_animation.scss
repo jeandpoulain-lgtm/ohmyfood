@@ -1,8 +1,9 @@
+//animation aparition plat
 
 @keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(20px); //translation en y
+        transform: translateY(20px); 
     }
     to {
         opacity: 1;
