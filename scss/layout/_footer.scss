@@ -36,3 +36,23 @@
         margin-bottom: 0;
     }
 }
+
+@media (min-width: 1024px) {
+    .footer {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding-top: 60px;
+        padding-bottom: 30px;
+
+        &__title {
+            margin-bottom: 0;
+            margin-left: 50px; 
+        }
+
+        &__list {
+            flex-direction: row;
+            gap: 20px;
+        }
+    }
+}
