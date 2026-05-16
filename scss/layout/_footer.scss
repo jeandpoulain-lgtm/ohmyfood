@@ -1,6 +1,7 @@
 @use '../base/variables';
 @use '../base/mixin';
 
+//bas de page reutilisable
 .footer {
     background-color: #353535;
     color: white;
@@ -27,7 +28,7 @@
 @media (min-width: 768px) {
     
     .footer {
-        flex-direction: row-reverse; // Le titre passe à droite des liens
+        flex-direction: row-reverse;
         align-items: center;
         gap: 50px;
     }

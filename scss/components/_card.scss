@@ -52,38 +52,9 @@
         margin: 10px;
     }
 
-    &__btn {
+    &__heart {
         position: absolute;
         right: 25px;
         bottom: 25px; 
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        z-index: 10; 
-
-        .card__icon {
-            font-size: 25px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            transition: opacity 400ms ease-in-out;
-
-            &--full {
-                opacity: 0;
-                background: linear-gradient(193deg, variables.$couleur-secondaire, variables.$couleur-primaire);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-        }
-
-        &:hover {
-            .card__icon--full {
-                opacity: 1; 
-            }
-            .card__icon--empty {
-                opacity: 0; 
-            }
-        }
     }
 }

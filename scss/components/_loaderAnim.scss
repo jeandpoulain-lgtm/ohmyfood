@@ -1,0 +1,56 @@
+@use '../base/variables';
+
+.loader {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: loader-out 0.5s 2.5s forwards; 
+}
+
+/* Le Spinner */
+.loader__item {
+    width: 100px;
+    height: 100px;
+    border: 10px solid transparent;
+    border-top: 10px solid variables.$couleur-primaire;
+    border-bottom: 10px solid variables.$couleur-secondaire; 
+    border-radius: 50%;
+    position: relative;
+    animation: spin 1.5s linear infinite;
+}
+
+.loader__item::before {
+    content: "";
+    position: absolute;
+    top: 5px; left: 5px; bottom: 5px; right: 5px;
+    border: 5px solid transparent;
+    border-top: 5px solid variables.$couleur-tertiaire;
+    border-radius: 50%;
+    animation: spin 3s linear infinite;
+}
+
+/* --- Animations --- */
+
+/* Rotation du spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Disparition du loader */
+@keyframes loader-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

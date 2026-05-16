@@ -1,13 +1,3 @@
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 body {
   width: 100%;
   max-width: 1280px;
@@ -140,36 +130,113 @@ body {
   font-weight: 300;
   margin: 10px;
 }
-.card__btn {
+.card__heart {
   position: absolute;
   right: 25px;
   bottom: 25px;
-  width: 30px;
-  height: 30px;
+}
+
+.heart-checkbox {
+  position: relative;
   cursor: pointer;
-  z-index: 10;
+  display: inline-block;
 }
-.card__btn .card__icon {
+.heart-checkbox input {
+  display: none;
+}
+.heart-checkbox i {
   font-size: 25px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  transition: opacity 400ms ease-in-out;
 }
-.card__btn .card__icon--full {
+.heart-checkbox .heart-empty {
+  position: relative;
+}
+.heart-checkbox .heart-full {
+  position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
-  background: linear-gradient(193deg, #FF79DA, #9356DC);
+  background: linear-gradient(193deg, #9356DC 0%, #FF79DA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  transition: opacity 1.5s;
 }
-.card__btn:hover .card__icon--full {
+.heart-checkbox input:checked ~ .heart-full {
   opacity: 1;
 }
-.card__btn:hover .card__icon--empty {
+.heart-checkbox input:checked ~ .heart-empty {
   opacity: 0;
 }
 
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: loader-out 0.5s 2.5s forwards;
+}
+
+/* Le Spinner */
+.loader__item {
+  width: 100px;
+  height: 100px;
+  border: 10px solid transparent;
+  border-top: 10px solid #9356DC;
+  border-bottom: 10px solid #FF79DA;
+  border-radius: 50%;
+  position: relative;
+  animation: spin 1.5s linear infinite;
+}
+
+.loader__item::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  right: 5px;
+  border: 5px solid transparent;
+  border-top: 5px solid #99E2D0;
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+}
+
+/* --- Animations --- */
+/* Rotation du spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Disparition du loader */
+@keyframes loader-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .btn {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -186,7 +253,7 @@ body {
 .btn:hover {
   opacity: 0.85;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
-  transform: scale(1.02);
+  transform: scale(1.2);
 }
 
 /*----------*/
@@ -251,24 +318,6 @@ body {
   font-weight: 300;
   color: #353535;
   text-align: center;
-}
-.hero__btn {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: white;
-  padding: 13px 18.75px;
-  border: none;
-  background-image: linear-gradient(193deg, #FF79DA 0%, #9356DC 100%);
-  border-radius: 25px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1490196078);
-  transition: transform 300ms, box-shadow 300ms, opacity 300ms;
-  cursor: pointer;
-}
-.hero__btn:hover {
-  opacity: 0.85;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
-  transform: scale(1.02);
 }
 
 /*-------*/
@@ -419,7 +468,7 @@ body {
 
 .menu__header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 .menu__header .menu__title {
@@ -428,26 +477,8 @@ body {
   font-weight: 400;
 }
 .menu__header .menu__heart {
-  position: relative;
-  cursor: pointer;
-  font-size: 26px;
-}
-.menu__header .menu__heart .fa-solid {
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  background: linear-gradient(193deg, #FF79DA, #9356DC);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: opacity 1s;
-}
-.menu__header .menu__heart:hover .fa-solid {
-  opacity: 1;
-}
-.menu__header .menu__heart:hover .fa-regular {
-  opacity: 0;
+  margin-right: 25px;
+  margin-top: 25px;
 }
 
 .menu-item {
@@ -496,19 +527,21 @@ body {
   white-space: nowrap;
   overflow: hidden;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
 }
-.menu-item__content h2 {
-  font-size: 16px;
-}
-.menu-item__content h3 {
+.menu-item__content .menu-item__title {
   font-size: 18px;
+  font-weight: bold;
   margin: 0;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menu-item__content p {
+.menu-item__content .menu-item__subtitle {
   font-size: 15px;
   margin: 5px 0 0 0;
-}
-.menu-item__content h3, .menu-item__content p {
+  display: block;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -517,6 +550,15 @@ body {
   display: flex;
   align-items: flex-end;
   padding: 15px;
+}
+.menu-item__input {
+  display: none;
+}
+.menu-item__container {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
 }
 .menu-item__check {
   background-color: #99E2D0;
@@ -531,11 +573,8 @@ body {
 .menu-item__check i {
   color: white;
 }
-.menu-item:hover .menu-item__check {
+.menu-item__input:checked + .menu-item__container .menu-item__check {
   margin-right: 0;
-}
-.menu-item:hover i {
-  transform: rotate(0);
 }
 
 .menu__category-title {
@@ -552,10 +591,16 @@ body {
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .menu-header {
-    width: 80%;
-    margin: -50px auto 0 auto;
-    border-radius: 40px 40px 0 0;
+  .menu__header {
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .menu__heart {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    transform: translateY(-10px);
   }
 }
 @media (min-width: 1024px) {
@@ -564,19 +609,13 @@ body {
     padding: 40px 150px;
   }
   .menu__header {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 20px;
     width: 100%;
     margin: 0 auto;
   }
-  .menu__title {
-    margin: 0;
-  }
   .menu__heart {
     margin: 0;
-    transform: translateY(5px);
   }
 }/*# sourceMappingURL=style.css.map */

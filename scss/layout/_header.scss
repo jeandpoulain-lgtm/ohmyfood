@@ -1,7 +1,7 @@
 @use '../base/variables';
 @use '../base/mixin';
 
-
+//en tete reutilisable
 .header {
     @include mixin.flex-center;
     height: 63px;

@@ -1,4 +1,4 @@
-//animation aparition plat
+//animation aparition des plats
 
 @keyframes slideUp {
     from {
@@ -11,7 +11,7 @@
     }
 }
 
-// Une mixin pour appliquer l'animation facilement
+// appel mixin
 @mixin appearance-animation {
     animation: slideUp 0.6s ease-out both;
 }

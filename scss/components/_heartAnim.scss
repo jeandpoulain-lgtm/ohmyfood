@@ -1,0 +1,39 @@
+@use "../base/mixin";
+
+//coeur chekc reutilisable 
+.heart-checkbox {
+
+    position:relative;
+    cursor: pointer;
+    display: inline-block;
+
+    input {
+        display: none;
+    }
+
+    i{
+        font-size: 25px;
+    }
+
+    .heart-empty {
+        position: relative;
+    }
+
+    .heart-full {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        @include mixin.heart-gradient;
+        transition: opacity 1.5s;
+    }
+
+    input:checked {
+        ~ .heart-full {
+        opacity: 1;
+        }
+        ~ .heart-empty {
+        opacity: 0;
+        }
+    }
+}

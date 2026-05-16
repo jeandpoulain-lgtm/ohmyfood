@@ -1,13 +1,15 @@
-// Import des outils en premier 
+// Import variable mixin
 @use 'base/variables';
 @use 'base/mixin';
-@use 'base/animation'; 
 @use 'base/base';
 
-// Import des styles par dossiers
+// Import layout, composants et pages 
 @use 'layout/header';
 @use 'layout/footer';
 @use 'components/card';
+@use 'components/heartAnim';
+@use 'components/loaderAnim';
+@use 'components/slideAnim'; 
 @use 'components/button';
 @use 'pages/home';
 @use 'pages/restaurant';

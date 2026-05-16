@@ -1,7 +1,6 @@
 @use '../base/variables';
 @use '../base/mixin';
-@use '../base/animation'; 
-
+@use '../components/slideAnim';
 
 .resto-banner {
     width: 100%;
@@ -21,40 +20,17 @@
 
 .menu__header {
     display: flex;
-    align-items: center;
+    align-items:flex-start;
     justify-content: space-between;
 
     .menu__title {
         @include mixin.font-shrikhand(28px);
     }
-
-    .menu__heart {
-        position: relative;
-        cursor: pointer;
-        font-size: 26px;
-        
-        .fa-solid {
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            background: linear-gradient(193deg, variables.$couleur-secondaire, variables.$couleur-primaire);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: opacity 1s;
-        }
-
-        &:hover {
-            .fa-solid {
-                opacity: 1;
-            }
-            .fa-regular {
-                opacity: 0; 
-            }
-        }
+    .menu__heart{
+        margin-right: 25px;
+        margin-top: 25px;
     }
 }
-
 
 .menu-item {
     background-color: white;
@@ -66,8 +42,7 @@
     overflow: hidden;
     cursor: pointer;
 
-    // --- L'ANIMATION D'APPARITION ---
-    @include animation.appearance-animation; 
+    @include slideAnim.appearance-animation; 
 
     @for $i from 1 through 10 {
         &--#{$i} {
@@ -75,60 +50,71 @@
         }
     }
 
-    // --- LE CONTENU TEXTUEL ---
     &__content {
         flex: 1;
         white-space: nowrap;
         overflow: hidden;
         padding: 15px;
+        display: flex;       // Ajouté pour gérer la colonne
+        flex-direction: column; // Aligne le titre et le sous-titre verticalement
         
-        h2 { font-size: 16px;}
-        h3 { font-size: 18px; margin: 0; }
-        p { font-size: 15px; margin: 5px 0 0 0; }
+        // Remplacement de h3 et p par des classes span
+        .menu-item__title { 
+            font-size: 18px; 
+            font-weight: bold;
+            margin: 0; 
+            display: block; // Assure le retour à la ligne
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-        h3, p {
+        .menu-item__subtitle { 
+            font-size: 15px; 
+            margin: 5px 0 0 0; 
+            display: block; // Assure le retour à la ligne
             overflow: hidden;
             text-overflow: ellipsis;
         }
     }
 
-    // --- LE PRIX ---
     &__price {
         font-weight: bold;
         display: flex;
         align-items: flex-end;
         padding: 15px;
-        
     }
 
-    // --- LE BLOC CHECK  ---
+    &__input {
+        display: none;
+    }
+
+    &__container {
+        display: flex;
+        width: 100%;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
     &__check {
-    background-color: variables.$couleur-tertiaire; 
-    margin-right: -65px;
-    width: 60px;
-    display: flex;
-    align-items: center;      
-    justify-content: center;   
-    align-self: stretch;       
-    transition: margin-right 0.5s ease-in-out;
+        background-color: variables.$couleur-tertiaire; 
+        margin-right: -65px; 
+        width: 60px;
+        display: flex;
+        align-items: center;      
+        justify-content: center;   
+        align-self: stretch;       
+        transition: margin-right 0.5s ease-in-out;
 
-    i{
-        color:white;
+        i { color: white; }
     }
-}
 
-    // ---  L'EFFET AU SURVOL ---
-    &:hover {
+    &__input:checked + &__container {
         .menu-item__check {
             margin-right: 0;
         }
-        
-        i {
-            transform: rotate(0);
-        }
     }
 }
-//titre souligne en vert
+
 .menu__category-title {
     text-transform: uppercase;
     font-weight: 300;
@@ -137,29 +123,34 @@
     width: 40px;
 }
 
+// --- MEDIA QUERIES ---
 @media (min-width: 768px) {
     .restaurant-img {
         height: 400px;
         object-fit: cover;
     }
 
-    .menu-header {
-        width: 80%;     
-        margin: -50px auto 0 auto; 
-        border-radius: 40px 40px 0 0;
+    .menu__header {   
+        justify-content: center; 
+        align-items: center;
+        gap: 30px;  
+    }
+
+    .menu__heart{
+        margin: 0;
+        display: flex;
+        align-items: center;
+        transform: translateY(-10px);
     }
 }
 
 @media (min-width: 1024px) {
-
     .menu {
         margin: -40px 150px 0 150px; 
         padding: 40px 150px;       
     }
 
-    .menu__header {
-        display: flex;
-        flex-direction: row;    
+    .menu__header { 
         justify-content: center; 
         align-items: center;    
         gap: 20px;              
@@ -167,13 +158,7 @@
         margin: 0 auto;         
     }
 
-    .menu__title {
+    .menu__heart{
         margin: 0;
-
-    }
-
-    .menu__heart {
-        margin: 0;
-        transform: translateY(5px);
     }
 }
