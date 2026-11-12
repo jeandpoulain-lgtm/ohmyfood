@@ -25,7 +25,7 @@
         left: 0;
         opacity: 0;
         @include mixin.heart-gradient;
-        transition: opacity 1.5s;
+        transition: opacity 2s;
     }
 
     input:checked {
